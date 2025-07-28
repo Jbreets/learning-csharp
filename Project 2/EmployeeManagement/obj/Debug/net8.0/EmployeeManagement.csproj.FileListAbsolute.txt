@@ -1,0 +1,15 @@
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/EmployeeManagement.GeneratedMSBuildEditorConfig.editorconfig
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/EmployeeManagement.AssemblyInfoInputs.cache
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/EmployeeManagement.AssemblyInfo.cs
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/EmployeeManagement.csproj.CoreCompileInputs.cache
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/EmployeeManagement.sourcelink.json
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/bin/Debug/net8.0/EmployeeManagement
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/bin/Debug/net8.0/EmployeeManagement.deps.json
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/bin/Debug/net8.0/EmployeeManagement.runtimeconfig.json
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/bin/Debug/net8.0/EmployeeManagement.dll
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/bin/Debug/net8.0/EmployeeManagement.pdb
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/EmployeeManagement.dll
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/refint/EmployeeManagement.dll
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/EmployeeManagement.pdb
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/EmployeeManagement.genruntimeconfig.cache
+/var/www/html/learning-csharp/Project 2/EmployeeManagement/obj/Debug/net8.0/ref/EmployeeManagement.dll
