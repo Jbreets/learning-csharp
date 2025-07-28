@@ -12,3 +12,4 @@
 /var/www/html/learning-csharp/Project 1/ConsoleCalculator/obj/Debug/net8.0/ConsoleCalculator.pdb
 /var/www/html/learning-csharp/Project 1/ConsoleCalculator/obj/Debug/net8.0/ConsoleCalculator.genruntimeconfig.cache
 /var/www/html/learning-csharp/Project 1/ConsoleCalculator/obj/Debug/net8.0/ref/ConsoleCalculator.dll
+/var/www/html/learning-csharp/Project 1/ConsoleCalculator/obj/Debug/net8.0/ConsoleCalculator.sourcelink.json

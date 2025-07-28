@@ -7,33 +7,42 @@ namespace ConsoleCalculator
         static void Main(string[] args) 
         {
 
-            // Loop the app so that it runs until closed
+            // Variable declaration
             while(true)
             {   
-                // ensure character is correct within call
-                Console.WriteLine("Input your first Number: ");
-                string numberOne = Console.ReadLine();
-
-                Console.WriteLine("Input your Operator: ");
-                string operation = Console.ReadLine();
-                while (operation != )
-
-                Console.WriteLine("Input your Second Number: ");
-                string numberTwo = Console.ReadLine(); 
-
-
-                // Updated double call to add character Parse
                 double result;
-                if(!double.TryParse(numberOne, out double numOne) ||
-                   !double.TryParse(numberTwo, out double numTwo))
-                {
-                    Console.WriteLine("Character is undefined please enter correct character!");
-                    return;
+                double numOne;
+                string operation;
+                double numTwo;
+                string[] validOperators = { "+", "-", "*", "/" };
+
+                // Error handling
+                while (true) {
+                    Console.Write("Enter first number: ");
+                    if (double.TryParse(Console.ReadLine(), out numOne))
+                        break;
+                    Console.WriteLine("Not a valid Number Please try again");
                 }
-                // double numOne = Convert.ToDouble(numberOne);
-                // double numTwo = Convert.ToDouble(numberTwo);
 
+                while (true) {
+                    Console.Write("Enter your operator: ");
+                    string opInput = Console.ReadLine();
 
+                    if (validOperators.Contains(opInput)) {
+                        operation = opInput;
+                        break;
+                    }
+                    Console.WriteLine("Not a valid operator. Please try again.");
+                }
+
+                while (true) {
+                    Console.Write("Enter Second number: ");
+                    if (double.TryParse(Console.ReadLine(), out numTwo))
+                        break;
+                    Console.WriteLine("Not a valid Number Please try again");
+                }
+
+                // Calculation switch case operation
                 switch (operation) 
                 {
                     case "+":
@@ -76,4 +85,3 @@ namespace ConsoleCalculator
         }
     }
 }
-
