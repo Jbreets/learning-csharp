@@ -7,6 +7,12 @@ namespace ConsoleCalculator
         static void Main(string[] args) 
         {
 
+            Console.Write("Do you want to run Fizz? y/n ");
+            string fizz = Console.ReadLine();
+
+            if(fizz == "y")
+                FizzBuzz();
+
             // Variable declaration
             while(true)
             {   
@@ -81,6 +87,21 @@ namespace ConsoleCalculator
             if (Console.ReadLine().ToLower() != "y")
                 break;
 
+            }
+        }
+
+        static void FizzBuzz() 
+        {
+            for (int i = 1; i<=100; i++)
+            {
+                if ( i % 3 == 0 && i % 5 == 0  ) 
+                    Console.WriteLine("FizzBuzz");
+                else if ( i % 3 == 0 )
+                    Console.WriteLine("Fizz");
+                else if ( i % 5 == 0 )
+                    Console.WriteLine("Buzz");
+                else 
+                    Console.WriteLine(i);
             }
         }
     }
