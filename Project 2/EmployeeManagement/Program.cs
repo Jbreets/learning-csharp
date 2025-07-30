@@ -6,7 +6,14 @@ namespace EmployeeManagement
     {   
         static void Main (string[] args)
         {   
+
+
             Console.WriteLine("\nWelcome to Employee Manager!\n");
+            
+            while(true) 
+            {
+            
+            Console.WriteLine("\nWhat service do you need?\n");
 
             Console.WriteLine("1. Add Employee");
             Console.WriteLine("2. View Employees");
@@ -28,13 +35,19 @@ namespace EmployeeManagement
                     Options.View();
                     break;
                 case 3:
-                    Options.Search();
+                    Console.Write("Which user would you like to view (Provide ID): ");
+                    int int3Temp = Convert.ToInt32(Console.ReadLine());
+                    Options.Search(int3Temp);
                     break;
                 case 4:
-                    Options.Update();
+                    Console.Write("Which user would you like to Update (Provide ID): ");
+                    int int4Temp = Convert.ToInt32(Console.ReadLine());
+                    Options.Update(int4Temp);
                     break;
                 case 5:
-                    Options.Delete();
+                    Console.Write("Which user would you like to Delete (Provide ID): ");
+                    int int5Temp = Convert.ToInt32(Console.ReadLine());
+                    Options.Delete(int5Temp);
                     break;
                 case 6:
                     Options.Exit();
@@ -43,13 +56,14 @@ namespace EmployeeManagement
                     break;
             }
             // Example of creation of new employee
-            EmployeeManagement.Employee emp1 = new Employee();
-            emp1.ID = 1;
-            emp1.name = "Jack";
-            emp1.age = 22;
-            emp1.job = "Web developer";
-            emp1.title = "Junior";
-            emp1.department = "Tech";
+            // EmployeeManagement.Employee emp1 = new Employee();
+            // emp1.ID = 1;
+            // emp1.name = "Jack";
+            // emp1.age = 22;
+            // emp1.job = "Web developer";
+            // emp1.title = "Junior";
+            // emp1.department = "Tech";
+            }
         }
     }
 

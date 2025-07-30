@@ -1,6 +1,5 @@
 namespace ConsoleCalculator
 {
-
     public static class Calculator
     {
         static public double Add (double a,  double b)
@@ -20,5 +19,4 @@ namespace ConsoleCalculator
             return a / b;
         }
     }
-
 }
