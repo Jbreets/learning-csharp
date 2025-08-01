@@ -6,15 +6,12 @@ namespace EmployeeManagement
     {   
         static void Main (string[] args)
         {   
-
-
             Console.WriteLine("\nWelcome to Employee Manager!\n");
             
             while(true) 
             {
             
             Console.WriteLine("\nWhat service do you need?\n");
-
             Console.WriteLine("1. Add Employee");
             Console.WriteLine("2. View Employees");
             Console.WriteLine("3. Search Employee by ID");
@@ -65,15 +62,5 @@ namespace EmployeeManagement
             // emp1.department = "Tech";
             }
         }
-    }
-
-    public class Employee
-    {
-        public int  ID;
-        public string name;
-        public int age;
-        public string job;
-        public string title;
-        public string department;
     }
 }

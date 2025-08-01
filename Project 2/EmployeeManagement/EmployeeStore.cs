@@ -6,11 +6,11 @@ namespace EmployeeManagement
     {
         public static List<Employee> Employees = new List<Employee>
         {
-            new Employee {ID = 1,name = "Jack",age = 22,job = "Web Dev",title = "Junior",department = "Tech"},
-            new Employee {ID = 2,name = "Ash",age = 32,job = "Web Dev",title = "Junior",department = "Tech"},
-            new Employee {ID = 3,name = "Nicole",age = 25,job = "Admin",title = "Junior",department = "Admin"},
-            new Employee {ID = 4,name = "Phoebe",age = 21,job = "Rep",title = "Junior",department = "Admin"},
-            new Employee {ID = 5,name = "Rach",age = 27,job = "Rep",title = "Junior",department = "Admin"}
+            new Employee (1,"Jack", 22, "Web Dev", "Junior", "Tech"),
+            new Employee (2,"Ash", 32, "Web Dev", "Junior", "Tech"),
+            new Employee (3,"Nicole", 25, "Admin", "Junior", "Admin"),
+            new Employee (4,"Phoebe", 21, "Rep", "Junior", "Admin"),
+            new Employee (5,"Rach", 27, "Rep", "Junior", "Admin")
         };  
     }
 }

@@ -6,10 +6,10 @@ namespace EmployeeManagement
         static public void Add()
         {
             Console.Write("What is the new user's Name? ");
-            string usrName = Console.ReadLine();
+            string usrName = Console.ReadLine()!;
 
             Console.Write("What is the new user's Age? ");
-            string usrAge = Console.ReadLine();
+            string usrAge = Console.ReadLine()!;
 
             if (!int.TryParse(usrAge, out int newUsrAge))
             {
@@ -18,31 +18,31 @@ namespace EmployeeManagement
             }
 
             Console.Write("What is the new user's Job? ");
-            string usrJob = Console.ReadLine();
+            string usrJob = Console.ReadLine()!;
 
             Console.Write("What is the new user's Title? ");
-            string usrTitle = Console.ReadLine();
+            string usrTitle = Console.ReadLine()!;
 
             Console.Write("What is the new user's Department? ");
-            string usrDepartment = Console.ReadLine();
+            string usrDepartment = Console.ReadLine()!;
 
-            // Prepare employee object
+            // Prepare employee object - *using constructor
             var newEmployee = new Employee
-            {
-                ID = EmployeeStore.Employees.Count + 1,
-                name = usrName,
-                age = newUsrAge,
-                job = usrJob,
-                title = usrTitle,
-                department = usrDepartment
-            };
+            (
+                EmployeeStore.Employees.Count + 1,
+                usrName,
+                newUsrAge,
+                usrJob,
+                usrTitle,
+                usrDepartment
+            );
 
             // Show a summary before confirmation (optional but good UX)
             Console.WriteLine("\nEmployee Summary:");
-            Console.WriteLine($"Name: {newEmployee.name}, Age: {newEmployee.age}, Job: {newEmployee.job}, Title: {newEmployee.title}, Department: {newEmployee.department}");
+            Console.WriteLine($"Name: {newEmployee.Name}, Age: {newEmployee.Age}, Job: {newEmployee.Job}, Title: {newEmployee.Title}, Department: {newEmployee.Department}");
 
             Console.Write("Are you sure you want to add this user? (y/n): ");
-            string yesNo = Console.ReadLine()?.ToLower();
+            string yesNo = Console.ReadLine()!.ToLower();
 
             if (yesNo == "y")
             {
@@ -61,7 +61,7 @@ namespace EmployeeManagement
             // Console.Write("Which ID are you searching for: ");
             foreach (var emp in EmployeeStore.Employees)
             {
-                Console.WriteLine($"ID: {emp.ID} | Name: {emp.name} | Age: {emp.age} | Job: {emp.job} | Title: {emp.title} | Department: {emp.department}");
+                Console.WriteLine($"ID: {emp.ID} | Name: {emp.Name} | Age: {emp.Age} | Job: {emp.Job} | Title: {emp.Title} | Department: {emp.Department}");
             }
         }
         // View employee in list based on ID
@@ -72,7 +72,7 @@ namespace EmployeeManagement
             {
                 if (ID == emp.ID)
                 {
-                    Console.WriteLine($"ID: {emp.ID} | Name: {emp.name} | Age: {emp.age} | Job: {emp.job} | Title: {emp.title} | Department: {emp.department}");
+                    Console.WriteLine($"ID: {emp.ID} | Name: {emp.Name} | Age: {emp.Age} | Job: {emp.Job} | Title: {emp.Title} | Department: {emp.Department}");
                     found = true;
                     break;
                 }
@@ -93,24 +93,24 @@ namespace EmployeeManagement
                     Console.WriteLine("Fields you can change: name, age, job, title, department");
                     Console.Write("What field would you like to change: ");
                     
-                    string usrField = Console.ReadLine().ToLower();
+                    string usrField = Console.ReadLine()!.ToLower();
 
                     Console.Write($"What would you like to change the value to?");
 
-                    string usrNewVal = Console.ReadLine();
+                    string usrNewVal = Console.ReadLine()!;
 
                     switch (usrField)
                     {
-                        case "name": emp.name = usrNewVal; break;
+                        case "name": emp.Name = usrNewVal; break;
                         case "age":
                             if (int.TryParse(usrNewVal, out int newAge))
-                                emp.age = newAge;
+                                emp.Age = newAge;
                             else
                                 Console.WriteLine("Invalid number for age.");
                             break;
-                        case "job": emp.job = usrNewVal; break;
-                        case "title": emp.title = usrNewVal; break;
-                        case "department": emp.department = usrNewVal; break;
+                        case "job": emp.Job = usrNewVal; break;
+                        case "title": emp.Title = usrNewVal; break;
+                        case "department": emp.Department = usrNewVal; break;
                         default:
                             Console.WriteLine("Invalid field.");
                             break;
@@ -130,7 +130,7 @@ namespace EmployeeManagement
 
 
             Console.Write("Are you sure you want to remove this user? (y/n): ");
-            string yesNo = Console.ReadLine()?.ToLower();
+            string yesNo = Console.ReadLine()!.ToLower();
 
             if (yesNo == "y")
             {
