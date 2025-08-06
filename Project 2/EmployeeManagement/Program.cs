@@ -18,6 +18,7 @@ namespace EmployeeManagement
             Console.WriteLine("4. Update Employee");
             Console.WriteLine("5. Delete Employee");
             Console.WriteLine("6. Exit\n");
+            Console.WriteLine("7. Promote Employee");
 
             Console.Write("Choose an option: ");
 
@@ -49,6 +50,11 @@ namespace EmployeeManagement
                 case 6:
                     Options.Exit();
                     break;
+                case 7:
+                Console.Write("Which user would you like to promote (Provide ID): ");
+                int promoteID = Convert.ToInt32(Console.ReadLine());
+                Options.Promote(promoteID);
+                break;
                 default:
                     break;
             }

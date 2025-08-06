@@ -1,6 +1,6 @@
 namespace EmployeeManagement
 {
-        public class Person 
+        public abstract class Person 
     {
         public string Name  { get; set; } 
         public int Age { get; set; }
@@ -9,6 +9,11 @@ namespace EmployeeManagement
         {
             Name = name;
             Age = age;
+        }
+
+        public virtual void DisplayInfo()
+        {
+            Console.WriteLine($"Name: {Name}, Age: {Age}");
         }
     }
 }

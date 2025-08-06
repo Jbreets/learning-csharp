@@ -71,7 +71,8 @@ namespace EmployeeManagement
             // Console.Write("Which ID are you searching for: ");
             foreach (var emp in EmployeeStore.Employees)
             {
-                Console.WriteLine($"ID: {emp.ID} | Name: {emp.Name} | Age: {emp.Age} | Job: {emp.Job} | Title: {emp.Title} | Department: {emp.Department}");
+                // Console.WriteLine($"ID: {emp.ID} | Name: {emp.Name} | Age: {emp.Age} | Job: {emp.Job} | Title: {emp.Title} | Department: {emp.Department}");
+                emp.DisplayInfo();
             }
         }
         // View employee in list based on ID
@@ -176,6 +177,19 @@ namespace EmployeeManagement
         {
             // Exits application
             System.Environment.Exit(0);
-        }   
+        }
+
+        public static void Promote(int id)
+        {
+            var employee = EmployeeStore.Employees.FirstOrDefault(e => e.ID == id);
+            if (employee != null)
+            {
+                employee.Promote();
+            }
+            else
+            {
+                Console.WriteLine("Employee not found.");
+            }
+        }
     }
 }
