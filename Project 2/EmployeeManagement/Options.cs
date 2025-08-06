@@ -20,11 +20,22 @@ namespace EmployeeManagement
             Console.Write("What is the new user's Job? ");
             string usrJob = Console.ReadLine()!;
 
-            Console.Write("What is the new user's Title? ");
+            Console.Write("What is the new user's Title? (Junior, Mid, Senior, Lead, Manager): ");
             string usrTitle = Console.ReadLine()!;
+            if (!Enum.TryParse(usrTitle, true, out Title newTitle))
+            {
+                Console.WriteLine("Invalid title.");
+                return;
+            }
 
-            Console.Write("What is the new user's Department? ");
-            string usrDepartment = Console.ReadLine()!;
+            Console.Write("What is the new user's Department? (Tech, HR, Admin, Sales, Marketing): ");
+            string usrDept = Console.ReadLine()!;
+            if (!Enum.TryParse(usrDept, true, out Department newDept))
+            {
+                Console.WriteLine("Invalid department.");
+                return;
+            }
+
 
             // Prepare employee object - *using constructor
             var newEmployee = new Employee
@@ -33,10 +44,9 @@ namespace EmployeeManagement
                 usrName,
                 newUsrAge,
                 usrJob,
-                usrTitle,
-                usrDepartment
+                newTitle,
+                newDept
             );
-
             // Show a summary before confirmation (optional but good UX)
             Console.WriteLine("\nEmployee Summary:");
             Console.WriteLine($"Name: {newEmployee.Name}, Age: {newEmployee.Age}, Job: {newEmployee.Job}, Title: {newEmployee.Title}, Department: {newEmployee.Department}");
@@ -101,16 +111,30 @@ namespace EmployeeManagement
 
                     switch (usrField)
                     {
-                        case "name": emp.Name = usrNewVal; break;
+                        case "name": 
+                            emp.Name = usrNewVal; 
+                            break;
                         case "age":
                             if (int.TryParse(usrNewVal, out int newAge))
                                 emp.Age = newAge;
                             else
                                 Console.WriteLine("Invalid number for age.");
                             break;
-                        case "job": emp.Job = usrNewVal; break;
-                        case "title": emp.Title = usrNewVal; break;
-                        case "department": emp.Department = usrNewVal; break;
+                        case "job": 
+                            emp.Job = usrNewVal; 
+                            break;
+                        case "title": 
+                            if (Enum.TryParse(usrNewVal, true, out Title newTitle))
+                            emp.Title = newTitle; 
+                            else
+                                Console.WriteLine("Invalid Title type");
+                            break;
+                        case "department": 
+                            if (Enum.TryParse(usrNewVal, true, out Department newDepartment))
+                                emp.Department = newDepartment;
+                            else
+                                Console.WriteLine("Invalid Department type");
+                            break;
                         default:
                             Console.WriteLine("Invalid field.");
                             break;
@@ -127,15 +151,11 @@ namespace EmployeeManagement
         static public void Delete( int ID )
         {
             // remove employee where ID is X
-
-
             Console.Write("Are you sure you want to remove this user? (y/n): ");
             string yesNo = Console.ReadLine()!.ToLower();
-
             if (yesNo == "y")
             {
                 var empToRemove = EmployeeStore.Employees.FirstOrDefault(e => e.ID == ID);
-
                 if (empToRemove != null)
                 {
                     EmployeeStore.Employees.Remove(empToRemove);
