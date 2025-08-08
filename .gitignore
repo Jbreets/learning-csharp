@@ -3,10 +3,16 @@ Projects.txt
 
 # Project 1 Ignores
 Project 1/ConsoleCalculator/README.md
+Project 1/ConsoleCalculator/obj
+Project 1/ConsoleCalculator/bin
 
 # Project 2 Ignores
 Project 2/EmployeeManagement/README.md
+Project 2/EmployeeManagement/obj
+Project 2/EmployeeManagement/bin
 
 # Project 3 Ignores
 Project 3/ToDoApp/README.md
 Project 3/ToDoApp/basic-workflow.txt
+Project 3/ToDoApp/obj
+Project 3/ToDoApp/bin
