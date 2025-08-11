@@ -18,8 +18,8 @@ namespace ToDoApp
             Priority = priority; 
             Status = status;
         }
-
     }
     public enum Priority {Urgent,High,Medium,Low}
     public enum Status{Complete,Underway,Pending}
+    public enum TaskActions{add,view,update,exit};
 }

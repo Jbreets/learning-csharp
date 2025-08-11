@@ -1,5 +1,4 @@
 using System.Reflection;
-
 namespace ToDoApp
 {
     class TaskManager
@@ -11,21 +10,24 @@ namespace ToDoApp
                 Console.WriteLine($"{task.ID}, {task.Description}, {task.DueDate}, {task.Priority}, {task.Status}," );
             }
         }
+        // Add new task Method
         static public void AddTask()
         {
-
             Console.Write("What is this task? ");
             string NewTaskDescription = Console.ReadLine()!;
+            Console.WriteLine("Date format = dd/mm/yyyy");
             Console.Write("When is this task due ");
             string NewTaskDateDue = Console.ReadLine()!;
             DateTime NewDateDue;
             DateTime.TryParse(NewTaskDateDue, out NewDateDue);
+            Console.WriteLine("Available Priorities: low | medium | high | urgent");
             Console.Write("What priority is this task? ");
             string NewTaskPriority = Console.ReadLine()!;
             if (!Enum.TryParse(NewTaskPriority, true, out Priority NewPriority))
             {
                 Console.WriteLine("Invalid Priority");
             }
+            Console.WriteLine("Available statuses: pending | underway | complete");
             Console.Write("What is the current status of the task ");
             string NewTaskStatus = Console.ReadLine()!;
             if (!Enum.TryParse(NewTaskStatus, true, out Status NewStatus))
@@ -38,13 +40,8 @@ namespace ToDoApp
                 TaskStore.TaskItems.Count+1, NewTaskDescription, NewDateDue, NewPriority, NewStatus
             );
             TaskStore.TaskItems.Add(task);
-
-            // var task = new TaskItem
-            // (
-                // 6, "Finish ToDoApp", DateTime.Today, Priority.Medium, Status.Underway 
-            // );
-            // TaskStore.TaskItems.Add(task);
         }
+        // Update task Method
         static public void UpdateTask(int ID)
         {       
             foreach (var task in TaskStore.TaskItems)
@@ -52,7 +49,7 @@ namespace ToDoApp
                 if (ID == task.ID)
                 {
                     Console.WriteLine("Fields you can change: Description, Due, Priority, Status");
-                    Console.Write("What field would you like to update: ");
+                    Console.Write("What field would you like to update:");
                     string UserResponse = Console.ReadLine()!.ToLower();
                     switch (UserResponse)
                     {
@@ -72,11 +69,11 @@ namespace ToDoApp
                 }
             }
         }
-
+        // Exit TodoList Method
         static public void Exit()
         {
+            Console.WriteLine("Come back soon");
             System.Environment.Exit(0);
         }
-
     }
 }
