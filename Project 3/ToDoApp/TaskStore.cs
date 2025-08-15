@@ -4,7 +4,7 @@ namespace ToDoApp
     {
         public static List<TaskItem> TaskItems = new List<TaskItem>
         {
-            new TaskItem(1, "Check emails", DateTime.Today, Priority.Urgent, Status.Complete),
+            new TaskItem(1, "Check emails", DateTime.Today, Priority.Urgent, Status.Pending),
             new TaskItem(2, "DuoLingo", DateTime.Today, Priority.High, Status.Complete),
             new TaskItem(3, "Go to the Gym", DateTime.Today, Priority.Medium, Status.Pending),
             new TaskItem(4, "Work / studying", DateTime.Today, Priority.Medium, Status.Underway),
